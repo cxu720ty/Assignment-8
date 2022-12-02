@@ -1,0 +1,18 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: master
+parts:
+- caption: Introduction
+  chapters: 
+  - file: Introduction/questions
+  - file: Introduction/datasetdesc
+- caption: Methods and Results
+  chapters:
+  - file: Methods and Results/method
+  - file: Methods and Results/Result
+- caption: Summary
+  chapters:
+  - file: Summary/Discussions
+  - file: Summary/References
