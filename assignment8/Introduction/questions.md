@@ -14,9 +14,9 @@ In this analysis, I will be investigating Disney movie Directors to determine th
 
 ## what's the total gross for disney movies? 
 
-$$
+$
 \sum_{j=0}^{+\infty} A_{j}
-$$
+$
 
 
 ```{image} ../disney2.png
