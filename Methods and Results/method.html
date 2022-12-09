@@ -1,0 +1,1068 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Methods &#8212; Final Project - Disney Data Analysis</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Results" href="Result.html" />
+    <link rel="prev" title="Dataset description" href="../Introduction/datasetdesc.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/Disney.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Final Project - Disney Data Analysis</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../master.html">
+                    Here is Crystal’s Final Project Assignment 8 - Data analysis of Disney
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Introduction/questions.html">
+   Question(s) of interests
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Introduction/datasetdesc.html">
+   Dataset description
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Methods and Results
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Methods
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Result.html">
+   Results
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Summary
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Summary/Discussions.html">
+   Discussions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Summary/References.html">
+   References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Methods and Results/method.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FMethods and Results/method.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/Methods and Results/method.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Methods
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lets-find-the-way-to-calculate-the-gross-average-and-total">
+   Lets find the way to calculate the Gross: Average and Total
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#total-gross-math-equation">
+     Total Gross Math Equation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#average-gross-math-equation">
+     Average Gross Math Equation
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Methods</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Methods
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lets-find-the-way-to-calculate-the-gross-average-and-total">
+   Lets find the way to calculate the Gross: Average and Total
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#total-gross-math-equation">
+     Total Gross Math Equation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#average-gross-math-equation">
+     Average Gross Math Equation
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="methods">
+<h1>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">#</a></h1>
+<p>Since I am only interested in computing the themes with the most sets, I will need to use tables that contain information on movies total gross and disney director. This implies that I will need to use the <strong>disney_movies_total_gross</strong> and the <strong>disney_director</strong> tables.</p>
+<p>However, before moving further, let us import the tables and do some basic visualizations.</p>
+<p><img alt="method" src="../_images/method.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lets import all the required libraries needed for this analysis</span>
+<span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="c1"># import all the required files</span>
+<span class="n">total_gross</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/disney_movies_total_gross.csv&quot;</span><span class="p">)</span>
+<span class="n">movie_director</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/disney-director.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lets see what the tables look like.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_gross</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>movie_title</th>
+      <th>release_date</th>
+      <th>genre</th>
+      <th>MPAA_rating</th>
+      <th>total_gross</th>
+      <th>inflation_adjusted_gross</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Snow White and the Seven Dwarfs</td>
+      <td>12/21/1937</td>
+      <td>Musical</td>
+      <td>G</td>
+      <td>184925485</td>
+      <td>5228953251</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Pinocchio</td>
+      <td>2/9/1940</td>
+      <td>Adventure</td>
+      <td>G</td>
+      <td>84300000</td>
+      <td>2188229052</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Fantasia</td>
+      <td>11/13/1940</td>
+      <td>Musical</td>
+      <td>G</td>
+      <td>83320000</td>
+      <td>2187090808</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Song of the South</td>
+      <td>11/12/1946</td>
+      <td>Adventure</td>
+      <td>G</td>
+      <td>65000000</td>
+      <td>1078510579</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Cinderella</td>
+      <td>2/15/1950</td>
+      <td>Drama</td>
+      <td>G</td>
+      <td>85000000</td>
+      <td>920608730</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">movie_director</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>director</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Snow White and the Seven Dwarfs</td>
+      <td>David Hand</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Pinocchio</td>
+      <td>Ben Sharpsteen</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Fantasia</td>
+      <td>full credits</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Dumbo</td>
+      <td>Ben Sharpsteen</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Bambi</td>
+      <td>David Hand</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="lets-find-the-way-to-calculate-the-gross-average-and-total">
+<h1>Lets find the way to calculate the Gross: Average and Total<a class="headerlink" href="#lets-find-the-way-to-calculate-the-gross-average-and-total" title="Permalink to this headline">#</a></h1>
+<p><img alt="dollar.png" src="Methods and Results/attachment:c506ed3d-91a8-4999-acde-4d39c6a2af67.png" /><img alt="method" src="../_images/dollar.png" /></p>
+<section id="total-gross-math-equation">
+<h2>Total Gross Math Equation<a class="headerlink" href="#total-gross-math-equation" title="Permalink to this headline">#</a></h2>
+<p>\begin{alignedat}{2}y&amp;,=,&amp;x_1+x_2+\cdot\cdot\cdot+x_n\end{alignedat}</p>
+</section>
+<section id="average-gross-math-equation">
+<h2>Average Gross Math Equation<a class="headerlink" href="#average-gross-math-equation" title="Permalink to this headline">#</a></h2>
+<div class="math notranslate nohighlight">
+\[
+\begin{aligned}
+\bar{y}&amp;=\frac{1}{n} \left(\sum_{i=1}^n x_i \right) 
+\end{aligned}
+\]</div>
+<p>Lets get some other information about the sets table.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_gross</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">total_gross</span><span class="p">[</span><span class="s1">&#39;total_gross&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 579 entries, 0 to 578
+Data columns (total 6 columns):
+ #   Column                    Non-Null Count  Dtype 
+---  ------                    --------------  ----- 
+ 0   movie_title               579 non-null    object
+ 1   release_date              579 non-null    object
+ 2   genre                     562 non-null    object
+ 3   MPAA_rating               523 non-null    object
+ 4   total_gross               579 non-null    int64 
+ 5   inflation_adjusted_gross  579 non-null    int64 
+dtypes: int64(2), object(4)
+memory usage: 27.3+ KB
+int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>The sets table has <span class="math notranslate nohighlight">\(579\)</span> rows and <span class="math notranslate nohighlight">\(6\)</span> columns. Every <strong>movie_title</strong> has a <strong>release_Date</strong>, a <strong>total_gross</strong>, the <strong>inflation_adjusted_gross</strong>.</p>
+<p>Lets get some other information about the <strong>movie_director</strong> table.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">movie_director</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 56 entries, 0 to 55
+Data columns (total 2 columns):
+ #   Column    Non-Null Count  Dtype 
+---  ------    --------------  ----- 
+ 0   name      56 non-null     object
+ 1   director  56 non-null     object
+dtypes: object(2)
+memory usage: 1.0+ KB
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <strong>movie_director</strong> table has <span class="math notranslate nohighlight">\(56\)</span> rows with <span class="math notranslate nohighlight">\(2\)</span> columns. Every movie name has an <strong>director</strong>.</p>
+<p>As a first visualization, lets look at the average inflation adjusted gross in each genre. To do this, I will merge table <strong>movie_director</strong> with <strong>total_gross</strong> as <strong>direct_gross</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">direct_gross</span><span class="o">=</span><span class="n">total_gross</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">movie_director</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;movie_title&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">indicator</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">direct_gross</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>movie_title</th>
+      <th>release_date</th>
+      <th>genre</th>
+      <th>MPAA_rating</th>
+      <th>total_gross</th>
+      <th>inflation_adjusted_gross</th>
+      <th>name</th>
+      <th>director</th>
+      <th>_merge</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Snow White and the Seven Dwarfs</td>
+      <td>12/21/1937</td>
+      <td>Musical</td>
+      <td>G</td>
+      <td>184925485</td>
+      <td>5228953251</td>
+      <td>Snow White and the Seven Dwarfs</td>
+      <td>David Hand</td>
+      <td>both</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Pinocchio</td>
+      <td>2/9/1940</td>
+      <td>Adventure</td>
+      <td>G</td>
+      <td>84300000</td>
+      <td>2188229052</td>
+      <td>Pinocchio</td>
+      <td>Ben Sharpsteen</td>
+      <td>both</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Fantasia</td>
+      <td>11/13/1940</td>
+      <td>Musical</td>
+      <td>G</td>
+      <td>83320000</td>
+      <td>2187090808</td>
+      <td>Fantasia</td>
+      <td>full credits</td>
+      <td>both</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Song of the South</td>
+      <td>11/12/1946</td>
+      <td>Adventure</td>
+      <td>G</td>
+      <td>65000000</td>
+      <td>1078510579</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>left_only</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Cinderella</td>
+      <td>2/15/1950</td>
+      <td>Drama</td>
+      <td>G</td>
+      <td>85000000</td>
+      <td>920608730</td>
+      <td>Cinderella</td>
+      <td>Wilfred Jackson</td>
+      <td>both</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>574</th>
+      <td>The Light Between Oceans</td>
+      <td>9/2/2016</td>
+      <td>Drama</td>
+      <td>PG-13</td>
+      <td>12545979</td>
+      <td>12545979</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>left_only</td>
+    </tr>
+    <tr>
+      <th>575</th>
+      <td>Queen of Katwe</td>
+      <td>9/23/2016</td>
+      <td>Drama</td>
+      <td>PG</td>
+      <td>8874389</td>
+      <td>8874389</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>left_only</td>
+    </tr>
+    <tr>
+      <th>576</th>
+      <td>Doctor Strange</td>
+      <td>11/4/2016</td>
+      <td>Adventure</td>
+      <td>PG-13</td>
+      <td>232532923</td>
+      <td>232532923</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>left_only</td>
+    </tr>
+    <tr>
+      <th>577</th>
+      <td>Moana</td>
+      <td>11/23/2016</td>
+      <td>Adventure</td>
+      <td>PG</td>
+      <td>246082029</td>
+      <td>246082029</td>
+      <td>Moana</td>
+      <td>Ron Clements</td>
+      <td>both</td>
+    </tr>
+    <tr>
+      <th>578</th>
+      <td>Rogue One: A Star Wars Story</td>
+      <td>12/16/2016</td>
+      <td>Adventure</td>
+      <td>PG-13</td>
+      <td>529483936</td>
+      <td>529483936</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>left_only</td>
+    </tr>
+  </tbody>
+</table>
+<p>579 rows × 9 columns</p>
+</div></div></div>
+</div>
+<p>After that I will use the <strong>total_gross</strong> table. I will group by director and then compute the average inflation adjusted gross for each director.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#get year from releasae date, and add year column back to the dataset total_gross</span>
+<span class="c1"># group by year and compute the average inflation adjusted gross.</span>
+
+<span class="c1">#total_gross[&#39;year&#39;] = pd.DatetimeIndex(total_gross[&#39;release_date&#39;]).year</span>
+<span class="c1">#total_gross=total_gross.assign(year = pd.DatetimeIndex(total_gross[&#39;release_date&#39;]).year)</span>
+
+<span class="n">direct_gross</span><span class="p">[</span><span class="s1">&#39;inflation_adjusted_gross&#39;</span><span class="p">]</span> <span class="o">=</span><span class="n">direct_gross</span><span class="p">[</span><span class="s1">&#39;inflation_adjusted_gross&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;\$&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;,&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">},</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">avg_inflation_gross_by_director</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">direct_gross</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;director&#39;</span><span class="p">)[</span><span class="s1">&#39;inflation_adjusted_gross&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;director&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">avg_inflation_gross_by_director</span> <span class="o">=</span><span class="n">avg_inflation_gross_by_director</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">avg_inflation_gross_by_director</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>director</th>
+      <th>inflation_adjusted_gross</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Art Stevens</td>
+      <td>1.331189e+08</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Barry Cook</td>
+      <td>2.168078e+08</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Ben Sharpsteen</td>
+      <td>2.188229e+09</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Byron Howard</td>
+      <td>3.412682e+08</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Chris Buck</td>
+      <td>3.494487e+08</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Now that we have it in the proper format, we can generate a bar plot to visualize it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use altair to generate a bar plot</span>
+<span class="n">Average_gross_plot</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">avg_inflation_gross_by_director</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;director:O&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Director&quot;</span><span class="p">),</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;inflation_adjusted_gross:Q&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Average inflation Adjusted Gross&quot;</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Average of Adjusted Gross by Year&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">Average_gross_plot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\cxu\Miniconda3\lib\site-packages\altair\utils\core.py:317: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
+  for col_name, dtype in df.dtypes.iteritems():
+</pre></div>
+</div>
+<div class="output text_html">
+<div id="altair-viz-6e920cd3e6134184a0911340d4766cfb"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-6e920cd3e6134184a0911340d4766cfb") {
+      outputDiv = document.getElementById("altair-viz-6e920cd3e6134184a0911340d4766cfb");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-a158c073c56c8942c2f9776da9de8fb8"}, "mark": "bar", "encoding": {"x": {"field": "director", "title": "Director", "type": "ordinal"}, "y": {"field": "inflation_adjusted_gross", "title": "Average inflation Adjusted Gross", "type": "quantitative"}}, "height": 300, "title": "Average of Adjusted Gross by Year", "width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-a158c073c56c8942c2f9776da9de8fb8": [{"director": "Art Stevens", "inflation_adjusted_gross": 133118889.0}, {"director": "Barry Cook", "inflation_adjusted_gross": 216807832.0}, {"director": "Ben Sharpsteen", "inflation_adjusted_gross": 2188229052.0}, {"director": "Byron Howard", "inflation_adjusted_gross": 341268248.0}, {"director": "Chris Buck", "inflation_adjusted_gross": 349448714.0}, {"director": "Chris Sanders", "inflation_adjusted_gross": 211506702.0}, {"director": "Chris Williams", "inflation_adjusted_gross": 133702498.0}, {"director": "Clyde Geronimi", "inflation_adjusted_gross": 189284665.5}, {"director": "David Hand", "inflation_adjusted_gross": 5228953251.0}, {"director": "Don Hall", "inflation_adjusted_gross": 229249222.0}, {"director": "Gary Trousdale", "inflation_adjusted_gross": 226398196.0}, {"director": "George Scribner", "inflation_adjusted_gross": 102254492.0}, {"director": "Hamilton Luske", "inflation_adjusted_gross": 1236035515.0}, {"director": "Mark Dindal", "inflation_adjusted_gross": 157371956.5}, {"director": "Mike Gabriel", "inflation_adjusted_gross": 165083842.5}, {"director": "Nathan Greno", "inflation_adjusted_gross": 214388548.0}, {"director": "Ralph Zondag", "inflation_adjusted_gross": 215438985.0}, {"director": "Rich Moore", "inflation_adjusted_gross": 200354959.0}, {"director": "Robert Walker", "inflation_adjusted_gross": 119218333.0}, {"director": "Roger Allers", "inflation_adjusted_gross": 761640898.0}, {"director": "Ron Clements", "inflation_adjusted_gross": 188421371.42857143}, {"director": "Stephen J. Anderson", "inflation_adjusted_gross": 74118229.0}, {"director": "Ted Berman", "inflation_adjusted_gross": 50553142.0}, {"director": "Wilfred Jackson", "inflation_adjusted_gross": 560880041.5}, {"director": "Will Finn", "inflation_adjusted_gross": 67910166.0}, {"director": "Wolfgang Reitherman", "inflation_adjusted_gross": 381435546.6666667}, {"director": "full credits", "inflation_adjusted_gross": 2187090808.0}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<p>From the above plot we can see that David Hand has the highest average gross income (adjusted for inflation).</p>
+<p>As a second visualization, lets take a look at the number of movies of each director.. To do this, I need to count the movies by each director</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Methods and Results"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../Introduction/datasetdesc.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Dataset description</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Result.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Results</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Crystal Xu<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
